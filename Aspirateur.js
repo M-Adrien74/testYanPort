@@ -11,7 +11,7 @@ var Aspirateur = /** @class */ (function () {
         this.y = y;
         this.orientation = orientation;
     }
-    Aspirateur.prototype.Avancer = function () {
+    Aspirateur.prototype.avancer = function () {
         switch (this.orientation) {
             case Orientation.N:
                 this.y++;
@@ -65,7 +65,7 @@ var Aspirateur = /** @class */ (function () {
             var instruction = instructions[i];
             switch (instruction) {
                 case 'A':
-                    this.Avancer();
+                    this.avancer();
                     break;
                 case 'D':
                     this.rotationDroite();
@@ -93,5 +93,4 @@ var instructions = 'DADADADAA';
 // les positions x et y ainsi que le sens de l'orientation
 var aspirateur = new Aspirateur(initialX, initialY, initialOrientation);
 aspirateur.instructions(instructions);
-var finalPosition = aspirateur.getPosition();
-console.log("Position finale: ".concat(finalPosition));
+console.log("Position finale: ".concat(aspirateur.getPosition()));

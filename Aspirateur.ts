@@ -16,7 +16,7 @@ class Aspirateur {
         this.orientation = orientation;
     }
 
-    Avancer() {
+    avancer():void {
         switch (this.orientation) {
             case Orientation.N:
                 this.y++;
@@ -33,7 +33,7 @@ class Aspirateur {
         }
     }
 
-    rotationDroite() {
+    rotationDroite():void {
         switch (this.orientation) {
             case Orientation.N:
                 this.orientation = Orientation.E;
@@ -50,7 +50,7 @@ class Aspirateur {
         }
     }
 
-    rotationGauche() {
+    rotationGauche():void{
         switch (this.orientation) {
             case Orientation.N:
                 this.orientation = Orientation.W;
@@ -72,7 +72,7 @@ class Aspirateur {
             const instruction = instructions[i];
             switch (instruction) {
                 case 'A':
-                    this.Avancer();
+                    this.avancer();
                     break;
                 case 'D':
                     this.rotationDroite();
@@ -103,6 +103,4 @@ const instructions = 'DADADADAA';
 const aspirateur = new Aspirateur(initialX, initialY, initialOrientation);
 
 aspirateur.instructions(instructions);
-const finalPosition = aspirateur.getPosition();
-
-console.log(`Position finale: ${finalPosition}`);
+console.log(`Position finale: ${aspirateur.getPosition()}`);
